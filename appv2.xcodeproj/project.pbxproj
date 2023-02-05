@@ -20,6 +20,7 @@
 		A5E07C7F298EE42500140509 /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E07C7E298EE42500140509 /* VideoPlayerViewController.swift */; };
 		A5E07C81298EE43E00140509 /* NewConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E07C80298EE43E00140509 /* NewConversationViewController.swift */; };
 		A5E07C83298EE44B00140509 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E07C82298EE44B00140509 /* ProfileViewController.swift */; };
+		A5E07C86298F099100140509 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E07C85298F099100140509 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		A5E07C7E298EE42500140509 /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
 		A5E07C80298EE43E00140509 /* NewConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationViewController.swift; sourceTree = "<group>"; };
 		A5E07C82298EE44B00140509 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		A5E07C85298F099100140509 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,8 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				A5E07C5D298EDEF000140509 /* ConversationViewController.swift */,
-				A5E07C78298EE3E900140509 /* LoginViewController.swift */,
-				A5E07C7A298EE3F900140509 /* RegisterViewController.swift */,
+				A5E07C84298F027800140509 /* LoginAndRegister */,
 				A5E07C7C298EE41600140509 /* PhotoViewerViewController.swift */,
 				A5E07C7E298EE42500140509 /* VideoPlayerViewController.swift */,
 				A5E07C80298EE43E00140509 /* NewConversationViewController.swift */,
@@ -124,6 +125,7 @@
 			children = (
 				A5E07C59298EDEF000140509 /* AppDelegate.swift */,
 				A5E07C5B298EDEF000140509 /* SceneDelegate.swift */,
+				A5E07C85298F099100140509 /* Extensions.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -134,6 +136,15 @@
 				A5E07C5F298EDEF000140509 /* Main.storyboard */,
 			);
 			path = Sotryboards;
+			sourceTree = "<group>";
+		};
+		A5E07C84298F027800140509 /* LoginAndRegister */ = {
+			isa = PBXGroup;
+			children = (
+				A5E07C78298EE3E900140509 /* LoginViewController.swift */,
+				A5E07C7A298EE3F900140509 /* RegisterViewController.swift */,
+			);
+			path = LoginAndRegister;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,6 +227,7 @@
 				A5E07C7F298EE42500140509 /* VideoPlayerViewController.swift in Sources */,
 				A5E07C81298EE43E00140509 /* NewConversationViewController.swift in Sources */,
 				A5E07C79298EE3E900140509 /* LoginViewController.swift in Sources */,
+				A5E07C86298F099100140509 /* Extensions.swift in Sources */,
 				A5E07C64298EDEF000140509 /* appv2.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

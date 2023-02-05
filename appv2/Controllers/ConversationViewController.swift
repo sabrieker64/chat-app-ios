@@ -15,6 +15,18 @@ class ConversationViewController: UIViewController {
         view.backgroundColor = .red
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let loggedIn = UserDefaults.standard.bool(forKey: "loggedIn")
+        
+        if !loggedIn {
+            let vc = LoginViewController();
+            let nav = UINavigationController(rootViewController: vc)
+            nav.modalPresentationStyle = .fullScreen
+            present(nav, animated: false)
+        }
+    }
 
 }
 
