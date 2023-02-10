@@ -8,6 +8,29 @@
 	<string>Please allow acces to photo libary</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Please allow acess to take a profile picture</string>
+    
+    <key>CFBundleURLTypes</key>
+    <array>
+      <dict>
+      <key>CFBundleURLSchemes</key>
+      <array>
+        <string>fb738612160946343</string>
+      </array>
+      </dict>
+    </array>
+    <key>FacebookAppID</key>
+    <string>738612160946343</string>
+    <key>FacebookClientToken</key>
+    <string>2c129c5bfd6ebaae2fcdd2a3db3c22ed</string>
+    <key>FacebookDisplayName</key>
+    <string>My Messenger</string>
+    
+    
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+      <string>fbapi</string>
+      <string>fb-messenger-share-api</string>
+    </array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FBSDKLoginKit
 
 class LoginViewController: UIViewController {
     
@@ -67,6 +69,9 @@ class LoginViewController: UIViewController {
     }()
     
     
+    private let fbLoginButton = FBLoginButton()
+    
+    
 
 
     override func viewDidLoad() {
@@ -90,6 +95,7 @@ class LoginViewController: UIViewController {
         scrollView.addSubview(emailInputField)
         scrollView.addSubview(passwordInputField)
         scrollView.addSubview(loginButton)
+        scrollView.addSubview(fbLoginButton)
     }
     
     override func viewDidLayoutSubviews() {
@@ -104,6 +110,7 @@ class LoginViewController: UIViewController {
         passwordInputField.frame = CGRect(x: 30, y: emailInputField.bottom+10, width: scrollView.width-60, height: 52)
         loginButton.frame = CGRect(x: 30, y: passwordInputField.bottom+10, width: scrollView.width-60, height: 52)
 
+        fbLoginButton.frame = CGRect(x: 30, y: loginButton.bottom+10, width: scrollView.width-60, height: 52)
         
     }
     
@@ -117,6 +124,20 @@ class LoginViewController: UIViewController {
         }
         
         //Firebase Login
+        
+        FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password, completion: {[weak self]authResult, error in
+            guard let strongSlef = self else {
+                return
+            }
+            guard let result = authResult, error == nil else {
+                print("Failed to Login in user with emaiil: \(email)")
+                return
+            }
+            let user = result.user
+            print("Logged in User: \(user)")
+            strongSlef.navigationController?.dismiss(animated: true, completion: nil)
+            
+        })
         
     }
     
