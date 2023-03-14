@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "97A7CEA5-817C-4F45-93BB-CEF47E2F318F"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "986D6832-62C3-4BDE-B135-D7A0B725D3AC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "appv2/Resources/DatabaseManager.swift"
+            startingColumnNumber = "28"
+            endingColumnNumber = "28"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "database"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
