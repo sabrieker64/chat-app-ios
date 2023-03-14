@@ -233,6 +233,7 @@ extension RegisterViewController: UITextFieldDelegate {
             registerButtonTapped()
         }
         return true
+        
     }
 }
 
