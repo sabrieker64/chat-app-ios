@@ -69,7 +69,11 @@ class LoginViewController: UIViewController {
     }()
     
     
-    private let fbLoginButton = FBLoginButton()
+    private let fbLoginButton: FBLoginButton = {
+        let button = FBLoginButton()
+       // button.permissions = ["email,public_profile"]
+        return button
+    }()
     
     
 
@@ -88,7 +92,8 @@ class LoginViewController: UIViewController {
         
         emailInputField.delegate = self
         passwordInputField.delegate = self
-            
+
+        fbLoginButton.delegate = self;
         //add subview
         view.addSubview(scrollView)
         scrollView.addSubview(imageView)
@@ -168,5 +173,47 @@ extension LoginViewController: UITextFieldDelegate {
             loginButtonTapped()
         }
         return true
+    }
+}
+
+extension LoginViewController: LoginButtonDelegate {
+    func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
+        //no operation
+    }
+    func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
+        guard let token = result?.token?.tokenString else{
+            print("User failed to log in with facebook")
+            return
+        }
+        
+        let fbRequest = FBSDKLoginKit.GraphRequest(graphPath: "me",
+                                                   parameters: ["fields": "email, name"],
+                                                   tokenString: token,
+                                                   version: nil,
+                                                   httpMethod: .get)
+        fbRequest.start(completion: { _, result, error in
+            guard let result = result as? [String: Any],
+            error == nil else {
+                print("Failed to make facebook graph request")
+                return
+            }
+            
+            print("\(result)")
+            
+            let creadential = FacebookAuthProvider.credential(withAccessToken: token)
+            FirebaseAuth.Auth.auth().signIn(with: creadential, completion: { [weak self] authResult, error in
+                guard let strongSelf = self else {
+                    return
+                }
+                guard authResult != nil, error == nil else {
+                    print("Facebook credential login failed, MFA may be needed - \(error)")
+                    return
+                }
+                
+                print("Successfully logged user in with facebook")
+                strongSelf.navigationController?.dismiss(animated: true, completion: nil)
+            })
+        })
+
     }
 }
